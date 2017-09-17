@@ -1,0 +1,391 @@
+  [1m[35m (67.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (53.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6950734614916825005)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateProducts (20170917154014)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (74.1ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "pro_id" character varying, "pro_name" character varying, "pro_image" character varying, "pro_status" character varying, "roots" character varying, "description" character varying, "rate" character varying, "digital" character varying, "customer_question" character varying, "feedback" character varying, "customer_reviews" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170917154014"]]
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-09-17 15:40:39.477637"], ["updated_at", "2017-09-17 15:40:39.477637"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6950734614916825005)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/products" for 127.0.0.1 at 2017-09-17 22:40:59 +0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 3085ms (Views: 3028.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-09-17 22:41:07 +0700
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (38.6ms)
+  Rendered products/new.html.erb within layouts/application (96.1ms)
+Completed 200 OK in 211ms (Views: 122.9ms | ActiveRecord: 12.9ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-09-17 22:43:04 +0700
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V0PTlwVvRyQKZ16f6+ue+AnCmCgkYtJitHWP0r/tLJGZFCcpiJUDg6ohlngIyFIqIWpvAF3Mw1DycmlJtwtzwg==", "product"=>{"pro_id"=>"1", "pro_name"=>"Beautiful striped coffee table", "pro_image"=>"coffee table", "pro_status"=>"Hang on sale", "roots"=>"Japan", "description"=>"This beautiful coffee table is made from strips of reclaimed wood. The striped design highlights the natural variations in color and texture of the salvaged woods. Custom color schemes are available by request. This listing is for a table with dimensions of 46\"x16\"x18\"H.", "rate"=>"$229", "digital"=>"The striped design highlights the natural variations in color and texture of the salvaged woods. Custom color schemes are available by request. This listing is for a table with dimensions of 46\"x16\"x18\"H. \t", "customer_question"=>"", "feedback"=>"", "customer_reviews"=>""}, "commit"=>"Create Product"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "products" ("pro_id", "pro_name", "pro_image", "pro_status", "roots", "description", "rate", "digital", "customer_question", "feedback", "customer_reviews", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["pro_id", "1"], ["pro_name", "Beautiful striped coffee table"], ["pro_image", "coffee table"], ["pro_status", "Hang on sale"], ["roots", "Japan"], ["description", "This beautiful coffee table is made from strips of reclaimed wood. The striped design highlights the natural variations in color and texture of the salvaged woods. Custom color schemes are available by request. This listing is for a table with dimensions of 46\"x16\"x18\"H."], ["rate", "$229"], ["digital", "The striped design highlights the natural variations in color and texture of the salvaged woods. Custom color schemes are available by request. This listing is for a table with dimensions of 46\"x16\"x18\"H. \t"], ["customer_question", ""], ["feedback", ""], ["customer_reviews", ""], ["created_at", "2017-09-17 15:43:04.223713"], ["updated_at", "2017-09-17 15:43:04.223713"]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/products/1
+Completed 302 Found in 19ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-17 22:43:04 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (4.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 77ms (Views: 37.8ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-17 22:43:08 +0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 44ms (Views: 42.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-09-17 22:43:15 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 54ms (Views: 48.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-17 22:43:20 +0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 66ms (Views: 64.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-09-17 22:43:28 +0700
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (9.2ms)
+  Rendered products/new.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 58ms (Views: 56.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-09-17 22:44:43 +0700
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Bz62zmy/6oeV5MB42xVHkB6D5uLTdDzQS47zqWiWkC/JaUJw4UWuIDWiCJ84NotCNisRyqraLeINiRUyYHDPfA==", "product"=>{"pro_id"=>"2", "pro_name"=>"Amazon Echo Show Swivel rotating lazy susan stand accessories", "pro_image"=>"Amazon Echo Show Swivel rotating lazy susan stand accessories", "pro_status"=>"Hang on sale \t", "roots"=>"USA", "description"=>"Handmade from beautiful Birch wood and white accent in between is a perfect blend of modern and stunning like your Echo Show. Rubber footing for anti skid and anti scratch your furniture.", "rate"=>"$45", "digital"=>"Production Method: Handmade from Birch wood and white accent in between wood; Width: 10 inches; Height: 2 inches... ", "customer_question"=>"", "feedback"=>"", "customer_reviews"=>""}, "commit"=>"Create Product"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "products" ("pro_id", "pro_name", "pro_image", "pro_status", "roots", "description", "rate", "digital", "customer_question", "feedback", "customer_reviews", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["pro_id", "2"], ["pro_name", "Amazon Echo Show Swivel rotating lazy susan stand accessories"], ["pro_image", "Amazon Echo Show Swivel rotating lazy susan stand accessories"], ["pro_status", "Hang on sale \t"], ["roots", "USA"], ["description", "Handmade from beautiful Birch wood and white accent in between is a perfect blend of modern and stunning like your Echo Show. Rubber footing for anti skid and anti scratch your furniture."], ["rate", "$45"], ["digital", "Production Method: Handmade from Birch wood and white accent in between wood; Width: 10 inches; Height: 2 inches... "], ["customer_question", ""], ["feedback", ""], ["customer_reviews", ""], ["created_at", "2017-09-17 15:44:43.490524"], ["updated_at", "2017-09-17 15:44:43.490524"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/products/2
+Completed 302 Found in 14ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/products/2" for 127.0.0.1 at 2017-09-17 22:44:43 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 49ms (Views: 45.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-17 22:44:45 +0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 53ms (Views: 52.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-09-17 22:44:49 +0700
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (34.5ms)
+  Rendered products/new.html.erb within layouts/application (39.3ms)
+Completed 200 OK in 78ms (Views: 76.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-09-17 22:46:06 +0700
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ghD5RbP8gYC9SqU9K6Q0g6YBrJGUjkM5IdmLgEnnFHNMRw37PgbFJx0MbdrIh/hRjqlbue0gUgtn3m0bQQFLIA==", "product"=>{"pro_id"=>"3", "pro_name"=>"Personalized Unicorn Necklace – DII - Little Girls Gift – Fantasy – 5/8 Inch 15MM Disc – Customize Name – Choose Birthstone Color – Fast 1 Day Shipping", "pro_image"=>"Personalized Unicorn Necklace – DII - Little Girls Gift – Fantasy", "pro_status"=>"Hang on sale", "roots"=>"USA", "description"=>"Unicorn charm handstamped name necklace by DistinctlyIvy. silver handstamped disc engraved with personalized name – necklace also comes with unicorn charm and birthstone crystal or pearl.", "rate"=>"$13", "digital"=>"Purchase of this item comes with 5/8 inch silver handstamped disc, unicorn charm, crystal, and chain.", "customer_question"=>"", "feedback"=>"", "customer_reviews"=>""}, "commit"=>"Create Product"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "products" ("pro_id", "pro_name", "pro_image", "pro_status", "roots", "description", "rate", "digital", "customer_question", "feedback", "customer_reviews", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["pro_id", "3"], ["pro_name", "Personalized Unicorn Necklace – DII - Little Girls Gift – Fantasy – 5/8 Inch 15MM Disc – Customize Name – Choose Birthstone Color – Fast 1 Day Shipping"], ["pro_image", "Personalized Unicorn Necklace – DII - Little Girls Gift – Fantasy"], ["pro_status", "Hang on sale"], ["roots", "USA"], ["description", "Unicorn charm handstamped name necklace by DistinctlyIvy. silver handstamped disc engraved with personalized name – necklace also comes with unicorn charm and birthstone crystal or pearl."], ["rate", "$13"], ["digital", "Purchase of this item comes with 5/8 inch silver handstamped disc, unicorn charm, crystal, and chain."], ["customer_question", ""], ["feedback", ""], ["customer_reviews", ""], ["created_at", "2017-09-17 15:46:06.183747"], ["updated_at", "2017-09-17 15:46:06.183747"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/products/3
+Completed 302 Found in 30ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/products/3" for 127.0.0.1 at 2017-09-17 22:46:06 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 53ms (Views: 47.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-17 22:46:08 +0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 45ms (Views: 43.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-09-17 22:46:18 +0700
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (8.4ms)
+  Rendered products/new.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 53ms (Views: 51.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-09-17 22:47:31 +0700
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"W/aDYR/bKt5ZqMXQtndmaD9KqWH3diPexMM0nxMqPI6VoXffkiFuefnuDTdVVKq6F+JeSY7YMuyCxNIEG8xj3Q==", "product"=>{"pro_id"=>"4", "pro_name"=>"Personalized Stackable Name Ring - Stacking Rings", "pro_image"=>"Personalized Stackable Name Ring - Stacking Rings", "pro_status"=>"Hang on sale", "roots"=>"USA", "description"=>"New to our product line are these nice Stainless Steel Stackable Name Rings, they are available in Matte, Shiny, Rose Gold, Gold and Coffee colors Stainless Steel. Each ring is personalized with your choice of wording and/or dates.", "rate"=>"$16", "digital"=>"Matte, Shiny, Rose Gold, Gold and Coffee Colors - 3mm Width.", "customer_question"=>"", "feedback"=>"", "customer_reviews"=>""}, "commit"=>"Create Product"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "products" ("pro_id", "pro_name", "pro_image", "pro_status", "roots", "description", "rate", "digital", "customer_question", "feedback", "customer_reviews", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["pro_id", "4"], ["pro_name", "Personalized Stackable Name Ring - Stacking Rings"], ["pro_image", "Personalized Stackable Name Ring - Stacking Rings"], ["pro_status", "Hang on sale"], ["roots", "USA"], ["description", "New to our product line are these nice Stainless Steel Stackable Name Rings, they are available in Matte, Shiny, Rose Gold, Gold and Coffee colors Stainless Steel. Each ring is personalized with your choice of wording and/or dates."], ["rate", "$16"], ["digital", "Matte, Shiny, Rose Gold, Gold and Coffee Colors - 3mm Width."], ["customer_question", ""], ["feedback", ""], ["customer_reviews", ""], ["created_at", "2017-09-17 15:47:31.741498"], ["updated_at", "2017-09-17 15:47:31.741498"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/products/4
+Completed 302 Found in 11ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2017-09-17 22:47:31 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 51ms (Views: 48.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-17 22:47:34 +0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 45ms (Views: 44.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-09-17 22:47:38 +0700
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (10.0ms)
+  Rendered products/new.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 56ms (Views: 55.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-09-17 22:48:50 +0700
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nJQGiQQALGOVQ5mMmqLhjsCGKEJDf1QFO/y5rrC0xDFSw/I3ifpoxDUFUWt5gS1c6C7fajrRRTd9+181uFKbYg==", "product"=>{"pro_id"=>"5", "pro_name"=>"A Baby Name Bar id Bracelet 16k Gold Plated Dainty Hand Stamp Artisan Bracelet Personalized Your Baby Name Customized New Born to Children 1st Birthday Great Gift", "pro_image"=>"A Baby Name Bar id Bracelet 16k Gold Plated Dainty Hand Stamp Artisan Bracelet Personalized Your Baby Name Customized New Born to Children 1st Birthday Great Gift", "pro_status"=>"Hang on sale", "roots"=>"Italia", "description"=>"Delicate Gold Plated Bar Bracelet Tiny Personalized bar Bracelet Name Bar Bracelet Hand Stamped Bracelet Infant Toddler Children Gift. High Fashion fancy jewelry trendy personalized Charm: Gold Plated Chain:Gold Size Charm: approx. 3/4 inch Chain: 4\"-6\" adjustable (let us know if you need shorter or longer chain at checkout) Stamping letter: 1.5 mm ★WARNING★CHOKING HAZARD★Allergic Reaction★- Children can choke or suffocate on whole or parts of jewelry. Adult supervision required. Keep eye on children when they are wearing our jewelry and The metal can cause allergic reaction, Please keep minimize the wearing time for safety. ★CARE INSTRUCTION FOR GOLD PLATED Plating will wear off fairly quickly over time. Here's are some tips to keep them little longer. 1.To avoid scratches, keep it separate from other jewelry. Wrap your jewelry in a soft cloth after use or cleaning. 2.Do not spray perfume, hair spray or any type of products contain chemicals. It may interact with metal. 3.Clean it with a soft cloth or cotton ball to remove any daily dust or dirt every time after use. Just rubbing the surface gently to restore shine. ★RETURN POLICY We accept unworn/personalized returns and/or exchanges within 7 days of when your package was delivered, with the following exceptions: - Returns are NOT accepted on personalized pieces, unless we made an error. - For custom orders, returns are handled on an item-by-item basis. Please contact us for a return: - Do NOT just send it back. - Please pack the item carefully. - Returns will process in approximately 2-3 weeks.", "rate"=>"$18.98", "digital"=>"Production Method: Supply - Gold Plated(with holes already punched) - Silver, Gold or Rose Gold chain - jump rings - jeweler's bench block - letter or number punch stamps (I used 1.5mm size stamps) - hammer - tape - needle nose pliers - jewelry wire cutters \t", "customer_question"=>"", "feedback"=>"", "customer_reviews"=>""}, "commit"=>"Create Product"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.8ms)[0m  [1m[32mINSERT INTO "products" ("pro_id", "pro_name", "pro_image", "pro_status", "roots", "description", "rate", "digital", "customer_question", "feedback", "customer_reviews", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["pro_id", "5"], ["pro_name", "A Baby Name Bar id Bracelet 16k Gold Plated Dainty Hand Stamp Artisan Bracelet Personalized Your Baby Name Customized New Born to Children 1st Birthday Great Gift"], ["pro_image", "A Baby Name Bar id Bracelet 16k Gold Plated Dainty Hand Stamp Artisan Bracelet Personalized Your Baby Name Customized New Born to Children 1st Birthday Great Gift"], ["pro_status", "Hang on sale"], ["roots", "Italia"], ["description", "Delicate Gold Plated Bar Bracelet Tiny Personalized bar Bracelet Name Bar Bracelet Hand Stamped Bracelet Infant Toddler Children Gift. High Fashion fancy jewelry trendy personalized Charm: Gold Plated Chain:Gold Size Charm: approx. 3/4 inch Chain: 4\"-6\" adjustable (let us know if you need shorter or longer chain at checkout) Stamping letter: 1.5 mm ★WARNING★CHOKING HAZARD★Allergic Reaction★- Children can choke or suffocate on whole or parts of jewelry. Adult supervision required. Keep eye on children when they are wearing our jewelry and The metal can cause allergic reaction, Please keep minimize the wearing time for safety. ★CARE INSTRUCTION FOR GOLD PLATED Plating will wear off fairly quickly over time. Here's are some tips to keep them little longer. 1.To avoid scratches, keep it separate from other jewelry. Wrap your jewelry in a soft cloth after use or cleaning. 2.Do not spray perfume, hair spray or any type of products contain chemicals. It may interact with metal. 3.Clean it with a soft cloth or cotton ball to remove any daily dust or dirt every time after use. Just rubbing the surface gently to restore shine. ★RETURN POLICY We accept unworn/personalized returns and/or exchanges within 7 days of when your package was delivered, with the following exceptions: - Returns are NOT accepted on personalized pieces, unless we made an error. - For custom orders, returns are handled on an item-by-item basis. Please contact us for a return: - Do NOT just send it back. - Please pack the item carefully. - Returns will process in approximately 2-3 weeks."], ["rate", "$18.98"], ["digital", "Production Method: Supply - Gold Plated(with holes already punched) - Silver, Gold or Rose Gold chain - jump rings - jeweler's bench block - letter or number punch stamps (I used 1.5mm size stamps) - hammer - tape - needle nose pliers - jewelry wire cutters \t"], ["customer_question", ""], ["feedback", ""], ["customer_reviews", ""], ["created_at", "2017-09-17 15:48:50.480053"], ["updated_at", "2017-09-17 15:48:50.480053"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/products/5
+Completed 302 Found in 14ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/products/5" for 127.0.0.1 at 2017-09-17 22:48:50 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 47ms (Views: 43.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-17 22:48:53 +0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 53ms (Views: 51.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-09-17 22:49:02 +0700
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (9.6ms)
+  Rendered products/new.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 278ms (Views: 276.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-09-17 22:50:14 +0700
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8tSyf/JwP0JI06my6RJheLdehzCi02NIBHCHUT+c0KU8g0bBf4p75eiVYVUKMa2qn/ZwGNt9cnpCd2HKN3qP9g==", "product"=>{"pro_id"=>"6", "pro_name"=>"Custom Baby Name bracelet-Adjustable Baby Toddler Child ID Bracelet-Personalized Bar-Both Sides-14K Gold Filled-Rose-Silver-CG277B_1X.25", "pro_image"=>"Custom Baby Name bracelet-Adjustable Baby Toddler Child ID Bracelet-Personalized Bar", "pro_status"=>"Hang on sale", "roots"=>"Italia", "description"=>"This baby bracelet is so adorable!!! This super cute baby bracelet will make a great gift idea for special occasions such as baby's birthdays, Christmas, baptism and many more! It is adjustable to any longer length so it's perfect for a fast growing baby/toddler/child!! ♥ Each side can be engraved with * Names or Initials * Symbols * Dates * Phone Numbers ♥ The bar measures about 25 mm X 6 mm (1 inch X .25 inch) or 32 mm X 6 mm (1.25 inch X .25 inch) depends on the number of characters. It is polished and tumbled for a special shimmery finish.", "rate"=>"$34.99", "digital"=>"Production Method: The rectangle bar is hand cut from sterling silver, 14K gold filled or 14K rose gold filled plate. The rectangle bar is engraved with your personalized names or your personalization. The rectangle bar pendant has a special shimmery shiny finish.", "customer_question"=>"", "feedback"=>"", "customer_reviews"=>""}, "commit"=>"Create Product"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "products" ("pro_id", "pro_name", "pro_image", "pro_status", "roots", "description", "rate", "digital", "customer_question", "feedback", "customer_reviews", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["pro_id", "6"], ["pro_name", "Custom Baby Name bracelet-Adjustable Baby Toddler Child ID Bracelet-Personalized Bar-Both Sides-14K Gold Filled-Rose-Silver-CG277B_1X.25"], ["pro_image", "Custom Baby Name bracelet-Adjustable Baby Toddler Child ID Bracelet-Personalized Bar"], ["pro_status", "Hang on sale"], ["roots", "Italia"], ["description", "This baby bracelet is so adorable!!! This super cute baby bracelet will make a great gift idea for special occasions such as baby's birthdays, Christmas, baptism and many more! It is adjustable to any longer length so it's perfect for a fast growing baby/toddler/child!! ♥ Each side can be engraved with * Names or Initials * Symbols * Dates * Phone Numbers ♥ The bar measures about 25 mm X 6 mm (1 inch X .25 inch) or 32 mm X 6 mm (1.25 inch X .25 inch) depends on the number of characters. It is polished and tumbled for a special shimmery finish."], ["rate", "$34.99"], ["digital", "Production Method: The rectangle bar is hand cut from sterling silver, 14K gold filled or 14K rose gold filled plate. The rectangle bar is engraved with your personalized names or your personalization. The rectangle bar pendant has a special shimmery shiny finish."], ["customer_question", ""], ["feedback", ""], ["customer_reviews", ""], ["created_at", "2017-09-17 15:50:14.066969"], ["updated_at", "2017-09-17 15:50:14.066969"]]
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/products/6
+Completed 302 Found in 17ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/products/6" for 127.0.0.1 at 2017-09-17 22:50:14 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 55ms (Views: 52.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-17 22:50:16 +0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 45ms (Views: 43.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-09-17 22:50:22 +0700
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (14.7ms)
+  Rendered products/new.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 54ms (Views: 52.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-09-17 22:52:10 +0700
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nx2cE3CWgUs9cbLACfCxHF4tYlFowUxVBRdsO8DIMUNRSmit/WzF7J03eifq033OdoWVeRFvXWdDEIqgyC5uEA==", "product"=>{"pro_id"=>"7", "pro_name"=>"The Original BenShot Shot Glass with Real 0.308 Bullet #Bulletproof MADE in the USA", "pro_image"=>"The Original BenShot Shot Glass", "pro_status"=>"Hang on sale", "roots"=>"USA", "description"=>"#bulletproof shot glass from the father and son team at BenShot Each shot glass is hand-sculpted to create a unique drinking masterpiece. 100% MADE in the USA 1.75oz shot glass made from high-quality, heavy glass Lead-free 0.308 caliber real bullet Glasses come individually packaged (packaging made in the USA)", "rate"=>"$15", "digital"=>"Production Method: These shot glasses are made in our glass-working studio in Wisconsin. We use a real bullet (Barnes 30393 30 Caliber solid copper bullet) . The glass holds liquid - it can be used to drink. Glass is malleable at high temperatures (>1000 degrees) so we use lots of heat and glass furnaces to produce these; Width: 2.50 inches; Height: 2.70 inches; Length: 2.50 inches; Material Glass, Copper, Metal \t", "customer_question"=>"", "feedback"=>"", "customer_reviews"=>""}, "commit"=>"Create Product"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.4ms)[0m  [1m[32mINSERT INTO "products" ("pro_id", "pro_name", "pro_image", "pro_status", "roots", "description", "rate", "digital", "customer_question", "feedback", "customer_reviews", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["pro_id", "7"], ["pro_name", "The Original BenShot Shot Glass with Real 0.308 Bullet #Bulletproof MADE in the USA"], ["pro_image", "The Original BenShot Shot Glass"], ["pro_status", "Hang on sale"], ["roots", "USA"], ["description", "#bulletproof shot glass from the father and son team at BenShot Each shot glass is hand-sculpted to create a unique drinking masterpiece. 100% MADE in the USA 1.75oz shot glass made from high-quality, heavy glass Lead-free 0.308 caliber real bullet Glasses come individually packaged (packaging made in the USA)"], ["rate", "$15"], ["digital", "Production Method: These shot glasses are made in our glass-working studio in Wisconsin. We use a real bullet (Barnes 30393 30 Caliber solid copper bullet) . The glass holds liquid - it can be used to drink. Glass is malleable at high temperatures (>1000 degrees) so we use lots of heat and glass furnaces to produce these; Width: 2.50 inches; Height: 2.70 inches; Length: 2.50 inches; Material Glass, Copper, Metal \t"], ["customer_question", ""], ["feedback", ""], ["customer_reviews", ""], ["created_at", "2017-09-17 15:52:10.186254"], ["updated_at", "2017-09-17 15:52:10.186254"]]
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/products/7
+Completed 302 Found in 20ms (ActiveRecord: 10.8ms)
+
+
+Started GET "/products/7" for 127.0.0.1 at 2017-09-17 22:52:10 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 46ms (Views: 38.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-17 22:52:12 +0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 48ms (Views: 46.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-09-17 22:52:18 +0700
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (10.6ms)
+  Rendered products/new.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 58ms (Views: 56.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-09-17 22:53:12 +0700
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zTjEZBTlGc1Iz0dceDnHbmEAYwR+0mxmonVX3G2Zu/EDbzDamR9dauiJj7ubGgu8SaiULAd8fVTkcrFHZX/kog==", "product"=>{"pro_id"=>"8", "pro_name"=>"Skinified Custom Game of Thrones Mug, 11-Ounces, Ceramic", "pro_image"=>"Skinified Custom Game of Thrones Mug, 11-Ounces, Ceramic", "pro_status"=>"Hang on sale", "roots"=>"USA", "description"=>"The Skinified Custom Game of Thrones Mug is a premium high-quality Mug. MUG DETAILS: • 11oz white ceramic mug • Design is printed on both sides of the mug • Dishwasher and microwave safe • Permanent inks(Image will not fade) • Safely Packaged for Shipping • Fast Shipping• The perfect gift", "rate"=>"$14.99", "digital"=>"Production Method: All of our ceramic coffee mugs are made using a high-quality sublimation process that adheres specialty inks to our mugs, leaving a permanent image on your mug! The images will not rub, peel, or scratch off like vinyl. We package all of our mugs safely in a form fitting foam so that your mug will not move around while shipping!; Size: 11 ounce; Material: Ceramic Finish; Type: Ceramic \t", "customer_question"=>"", "feedback"=>"", "customer_reviews"=>""}, "commit"=>"Create Product"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "products" ("pro_id", "pro_name", "pro_image", "pro_status", "roots", "description", "rate", "digital", "customer_question", "feedback", "customer_reviews", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["pro_id", "8"], ["pro_name", "Skinified Custom Game of Thrones Mug, 11-Ounces, Ceramic"], ["pro_image", "Skinified Custom Game of Thrones Mug, 11-Ounces, Ceramic"], ["pro_status", "Hang on sale"], ["roots", "USA"], ["description", "The Skinified Custom Game of Thrones Mug is a premium high-quality Mug. MUG DETAILS: • 11oz white ceramic mug • Design is printed on both sides of the mug • Dishwasher and microwave safe • Permanent inks(Image will not fade) • Safely Packaged for Shipping • Fast Shipping• The perfect gift"], ["rate", "$14.99"], ["digital", "Production Method: All of our ceramic coffee mugs are made using a high-quality sublimation process that adheres specialty inks to our mugs, leaving a permanent image on your mug! The images will not rub, peel, or scratch off like vinyl. We package all of our mugs safely in a form fitting foam so that your mug will not move around while shipping!; Size: 11 ounce; Material: Ceramic Finish; Type: Ceramic \t"], ["customer_question", ""], ["feedback", ""], ["customer_reviews", ""], ["created_at", "2017-09-17 15:53:12.102236"], ["updated_at", "2017-09-17 15:53:12.102236"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/products/8
+Completed 302 Found in 14ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/products/8" for 127.0.0.1 at 2017-09-17 22:53:12 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 69ms (Views: 66.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-17 22:53:15 +0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 51ms (Views: 48.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-09-17 22:53:31 +0700
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (11.0ms)
+  Rendered products/new.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 53ms (Views: 52.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-09-17 22:54:23 +0700
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BT6+DxdAHtS68hcfRkRhI5X37jlFEizWcJDgaRd9P0vLaUqxmrpacxq03/ilZ63xvV8ZETy8PeQ2lwbyH5tgGA==", "product"=>{"pro_id"=>"9", "pro_name"=>"LPS Littlest Pet Shop 3 Accessories Lot Set Laptop, Tablet, Phone PET NOT INCLUDED", "pro_image"=>"LPS Littlest Pet Shop 3 Accessories Lot Set Laptop, Tablet, Phone PET NOT INCLUDED", "pro_status"=>"Hang on sale", "roots"=>"USA", "description"=>"Lot of 3 custom made LPS accessories. Buyer will receive 1 laptop, 1 tablet, and 1 phone in a cute organza gift bag. Colors randomly selected from many available. Pet is NOT included. Small parts not intended for young children.", "rate"=>"$4.99", "digital"=>"Minimum Age Recommended (Months): 96", "customer_question"=>"", "feedback"=>"", "customer_reviews"=>""}, "commit"=>"Create Product"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (52.3ms)[0m  [1m[32mINSERT INTO "products" ("pro_id", "pro_name", "pro_image", "pro_status", "roots", "description", "rate", "digital", "customer_question", "feedback", "customer_reviews", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["pro_id", "9"], ["pro_name", "LPS Littlest Pet Shop 3 Accessories Lot Set Laptop, Tablet, Phone PET NOT INCLUDED"], ["pro_image", "LPS Littlest Pet Shop 3 Accessories Lot Set Laptop, Tablet, Phone PET NOT INCLUDED"], ["pro_status", "Hang on sale"], ["roots", "USA"], ["description", "Lot of 3 custom made LPS accessories. Buyer will receive 1 laptop, 1 tablet, and 1 phone in a cute organza gift bag. Colors randomly selected from many available. Pet is NOT included. Small parts not intended for young children."], ["rate", "$4.99"], ["digital", "Minimum Age Recommended (Months): 96"], ["customer_question", ""], ["feedback", ""], ["customer_reviews", ""], ["created_at", "2017-09-17 15:54:23.363378"], ["updated_at", "2017-09-17 15:54:23.363378"]]
+  [1m[35m (9.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/products/9
+Completed 302 Found in 70ms (ActiveRecord: 61.7ms)
+
+
+Started GET "/products/9" for 127.0.0.1 at 2017-09-17 22:54:23 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 41ms (Views: 39.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-17 22:54:25 +0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 49ms (Views: 47.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2017-09-17 22:54:42 +0700
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (9.2ms)
+  Rendered products/new.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 49ms (Views: 47.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2017-09-17 22:58:34 +0700
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u2DtfOmWy3t7XzBLy/8mWm+P0eq5GYfWjpthG3pG8Qd1NxnCZGyP3NsZ+Kwo3OqIRycmwsC3luTInIeAcqCuVA==", "product"=>{"pro_id"=>"10", "pro_name"=>"Outdoor Cotton Rope Patio Garden Hammock Chair Swing Max Weight: 260 Pounds Good for Lounging and Relaxation", "pro_image"=>"Outdoor Cotton Rope Patio Garden Hammock Chair Swing Max Weight: 260 Pounds Good for Lounging and Relaxation", "pro_status"=>"Hang on sale", "roots"=>"Indonesia", "description"=>"Hammock Chair. Cotton Made of Cotton Rope in the body and in the upper rope Hang it everywhere. Nice design. Great for your back.", "rate"=>"$79.99", "digital"=>"Production Method:\tOur Hammock Chairs are hand-woven for many years of durability. Suitable for both indoor and outdoor use. (make sure to move back inside during bad weather Can be mounted in between trees, on hammock chair stands or hanging from a stable item; Width:  80 centimeters; Height:  118 centimeters; Length:  80 centimeters; Material: Cotton Rope; Weight Supported: 265 Pounds; Minimum Age Recommended (Months): 72", "customer_question"=>"", "feedback"=>"", "customer_reviews"=>""}, "commit"=>"Create Product"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "products" ("pro_id", "pro_name", "pro_image", "pro_status", "roots", "description", "rate", "digital", "customer_question", "feedback", "customer_reviews", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["pro_id", "10"], ["pro_name", "Outdoor Cotton Rope Patio Garden Hammock Chair Swing Max Weight: 260 Pounds Good for Lounging and Relaxation"], ["pro_image", "Outdoor Cotton Rope Patio Garden Hammock Chair Swing Max Weight: 260 Pounds Good for Lounging and Relaxation"], ["pro_status", "Hang on sale"], ["roots", "Indonesia"], ["description", "Hammock Chair. Cotton Made of Cotton Rope in the body and in the upper rope Hang it everywhere. Nice design. Great for your back."], ["rate", "$79.99"], ["digital", "Production Method:\tOur Hammock Chairs are hand-woven for many years of durability. Suitable for both indoor and outdoor use. (make sure to move back inside during bad weather Can be mounted in between trees, on hammock chair stands or hanging from a stable item; Width:  80 centimeters; Height:  118 centimeters; Length:  80 centimeters; Material: Cotton Rope; Weight Supported: 265 Pounds; Minimum Age Recommended (Months): 72"], ["customer_question", ""], ["feedback", ""], ["customer_reviews", ""], ["created_at", "2017-09-17 15:58:34.629218"], ["updated_at", "2017-09-17 15:58:34.629218"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/products/10
+Completed 302 Found in 14ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/products/10" for 127.0.0.1 at 2017-09-17 22:58:34 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 46ms (Views: 39.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-17 22:58:36 +0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 50ms (Views: 48.3ms | ActiveRecord: 1.0ms)
+
+

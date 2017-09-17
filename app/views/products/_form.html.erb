@@ -1,0 +1,72 @@
+<%= form_with(model: product, local: true) do |form| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :pro_id %>
+    <%= form.text_field :pro_id, id: :product_pro_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pro_name %>
+    <%= form.text_field :pro_name, id: :product_pro_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pro_image %>
+    <%= form.text_field :pro_image, id: :product_pro_image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pro_status %>
+    <%= form.text_field :pro_status, id: :product_pro_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :roots %>
+    <%= form.text_field :roots, id: :product_roots %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :product_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rate %>
+    <%= form.text_field :rate, id: :product_rate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :digital %>
+    <%= form.text_field :digital, id: :product_digital %>
+  </div>
+
+  <div class="field">
+    <%= form.label :customer_question %>
+    <%= form.text_field :customer_question, id: :product_customer_question %>
+  </div>
+
+  <div class="field">
+    <%= form.label :feedback %>
+    <%= form.text_field :feedback, id: :product_feedback %>
+  </div>
+
+  <div class="field">
+    <%= form.label :customer_reviews %>
+    <%= form.text_field :customer_reviews, id: :product_customer_reviews %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
