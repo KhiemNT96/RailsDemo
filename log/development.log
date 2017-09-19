@@ -389,3 +389,406 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 50ms (Views: 48.3ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/products" for 127.0.0.1 at 2017-09-18 10:00:16 +0700
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (55.0ms)
+Completed 200 OK in 593ms (Views: 546.6ms | ActiveRecord: 15.8ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-18 10:21:38 +0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (35.1ms)
+Completed 200 OK in 311ms (Views: 293.0ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-18 10:22:03 +0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/khiem/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/khiem/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (6.6ms)
+Completed 200 OK in 20ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-18 10:22:12 +0700
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (34.1ms)
+Completed 200 OK in 82ms (Views: 70.7ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-18 10:34:55 +0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (59.8ms)
+Completed 200 OK in 777ms (Views: 692.0ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-18 13:03:56 +0700
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (31.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (89.6ms)
+Completed 200 OK in 516ms (Views: 439.0ms | ActiveRecord: 39.6ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6950734614916825005)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUserlogins (20170918174823)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (235.1ms)[0m  [1m[35mCREATE TABLE "userlogins" ("id" bigserial primary key, "userid" character varying, "username" character varying, "useremail" character varying, "userpass" character varying, "comment" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170918174823"]]
+  [1m[35m (42.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (27.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6950734614916825005)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/userlogins" for 127.0.0.1 at 2017-09-19 00:49:41 +0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UserloginsController#index as HTML
+  Rendering userlogins/index.html.erb within layouts/application
+  [1m[36mUserlogin Load (0.6ms)[0m  [1m[34mSELECT "userlogins".* FROM "userlogins"[0m
+  Rendered userlogins/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 553ms (Views: 537.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/userlogins/new" for 127.0.0.1 at 2017-09-19 00:49:45 +0700
+Processing by UserloginsController#new as HTML
+  Rendering userlogins/new.html.erb within layouts/application
+  Rendered userlogins/_form.html.erb (155.9ms)
+  Rendered userlogins/new.html.erb within layouts/application (159.5ms)
+Completed 200 OK in 246ms (Views: 210.3ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/userlogins" for 127.0.0.1 at 2017-09-19 00:50:11 +0700
+Processing by UserloginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qu2PdjJFHQ1OZ09YVHji/cIT6fwhjdd4AocwzvzPvkbOX8y5T5FAVfDDVGbd1sSuHT3g2PEolBeN/8zWYkwS5g==", "userlogin"=>{"userid"=>"12", "username"=>"khiem", "useremail"=>"khiem@gmail.com", "userpass"=>"123", "comment"=>"ert"}, "commit"=>"Create Userlogin"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "userlogins" ("userid", "username", "useremail", "userpass", "comment", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userid", "12"], ["username", "khiem"], ["useremail", "khiem@gmail.com"], ["userpass", "123"], ["comment", "ert"], ["created_at", "2017-09-18 17:50:11.306264"], ["updated_at", "2017-09-18 17:50:11.306264"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/userlogins/1
+Completed 302 Found in 15ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/userlogins/1" for 127.0.0.1 at 2017-09-19 00:50:11 +0700
+Processing by UserloginsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUserlogin Load (3.4ms)[0m  [1m[34mSELECT  "userlogins".* FROM "userlogins" WHERE "userlogins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering userlogins/show.html.erb within layouts/application
+  Rendered userlogins/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 77ms (Views: 40.4ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/userlogins" for 127.0.0.1 at 2017-09-19 00:50:17 +0700
+Processing by UserloginsController#index as HTML
+  Rendering userlogins/index.html.erb within layouts/application
+  [1m[36mUserlogin Load (0.6ms)[0m  [1m[34mSELECT "userlogins".* FROM "userlogins"[0m
+  Rendered userlogins/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 45ms (Views: 43.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-09-19 09:28:22 +0700
+  [1m[35m (6.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (40.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (179.9ms)
+Completed 200 OK in 1264ms (Views: 1191.3ms | ActiveRecord: 47.4ms)
+
+
+Started GET "/userlogins" for 127.0.0.1 at 2017-09-19 09:28:54 +0700
+Processing by UserloginsController#index as HTML
+  Rendering userlogins/index.html.erb within layouts/application
+  [1m[36mUserlogin Load (18.1ms)[0m  [1m[34mSELECT "userlogins".* FROM "userlogins"[0m
+  Rendered userlogins/index.html.erb within layouts/application (45.6ms)
+Completed 200 OK in 171ms (Views: 102.6ms | ActiveRecord: 27.0ms)
+
+
+Started GET "/userlogins/1/edit" for 127.0.0.1 at 2017-09-19 09:30:16 +0700
+Processing by UserloginsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUserlogin Load (0.7ms)[0m  [1m[34mSELECT  "userlogins".* FROM "userlogins" WHERE "userlogins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering userlogins/edit.html.erb within layouts/application
+  Rendered userlogins/_form.html.erb (114.0ms)
+  Rendered userlogins/edit.html.erb within layouts/application (223.6ms)
+Completed 200 OK in 286ms (Views: 245.7ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/userlogins/1" for 127.0.0.1 at 2017-09-19 09:30:38 +0700
+Processing by UserloginsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FGqBb8Q+l8CgPLCbmCxp5ZevrNfBb3L3vaxBQaldFoI92VjeGsrpJevxpeldHrCOXFojdidrL0UkZWwQeUO+vQ==", "userlogin"=>{"userid"=>"12", "username"=>"khiem", "useremail"=>"khiem@gmail.com", "userpass"=>"123", "comment"=>"Member"}, "commit"=>"Update Userlogin", "id"=>"1"}
+  [1m[36mUserlogin Load (0.3ms)[0m  [1m[34mSELECT  "userlogins".* FROM "userlogins" WHERE "userlogins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.5ms)[0m  [1m[33mUPDATE "userlogins" SET "comment" = $1, "updated_at" = $2 WHERE "userlogins"."id" = $3[0m  [["comment", "Member"], ["updated_at", "2017-09-19 02:30:38.013967"], ["id", 1]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/userlogins/1
+Completed 302 Found in 15ms (ActiveRecord: 7.2ms)
+
+
+Started GET "/userlogins/1" for 127.0.0.1 at 2017-09-19 09:30:38 +0700
+Processing by UserloginsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUserlogin Load (0.3ms)[0m  [1m[34mSELECT  "userlogins".* FROM "userlogins" WHERE "userlogins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering userlogins/show.html.erb within layouts/application
+  Rendered userlogins/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 65ms (Views: 32.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/userlogins" for 127.0.0.1 at 2017-09-19 09:30:40 +0700
+Processing by UserloginsController#index as HTML
+  Rendering userlogins/index.html.erb within layouts/application
+  [1m[36mUserlogin Load (1.8ms)[0m  [1m[34mSELECT "userlogins".* FROM "userlogins"[0m
+  Rendered userlogins/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 37ms (Views: 34.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/userlogins/1/edit" for 127.0.0.1 at 2017-09-19 09:30:45 +0700
+Processing by UserloginsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUserlogin Load (0.3ms)[0m  [1m[34mSELECT  "userlogins".* FROM "userlogins" WHERE "userlogins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering userlogins/edit.html.erb within layouts/application
+  Rendered userlogins/_form.html.erb (2.9ms)
+  Rendered userlogins/edit.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 45ms (Views: 40.6ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/userlogins/1" for 127.0.0.1 at 2017-09-19 09:30:54 +0700
+Processing by UserloginsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GenOPWMwHSL19bCG/VJM2cPUMIN9OHLqN5yne518d2swWheMvcRjx744pfQ4YJWyCCG/Ips8L1iuVYoqTWLfVA==", "userlogin"=>{"userid"=>"12", "username"=>"khiem", "useremail"=>"khiem@gmail.com", "userpass"=>"123", "comment"=>"admin"}, "commit"=>"Update Userlogin", "id"=>"1"}
+  [1m[36mUserlogin Load (1.6ms)[0m  [1m[34mSELECT  "userlogins".* FROM "userlogins" WHERE "userlogins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "userlogins" SET "comment" = $1, "updated_at" = $2 WHERE "userlogins"."id" = $3[0m  [["comment", "admin"], ["updated_at", "2017-09-19 02:30:54.906324"], ["id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/userlogins/1
+Completed 302 Found in 10ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/userlogins/1" for 127.0.0.1 at 2017-09-19 09:30:54 +0700
+Processing by UserloginsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUserlogin Load (0.2ms)[0m  [1m[34mSELECT  "userlogins".* FROM "userlogins" WHERE "userlogins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering userlogins/show.html.erb within layouts/application
+  Rendered userlogins/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 44ms (Views: 41.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/userlogins" for 127.0.0.1 at 2017-09-19 09:30:57 +0700
+Processing by UserloginsController#index as HTML
+  Rendering userlogins/index.html.erb within layouts/application
+  [1m[36mUserlogin Load (0.3ms)[0m  [1m[34mSELECT "userlogins".* FROM "userlogins"[0m
+  Rendered userlogins/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 68ms (Views: 66.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/userlogins" for 127.0.0.1 at 2017-09-19 10:28:04 +0700
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UserloginsController#index as HTML
+  Rendering userlogins/index.html.erb within layouts/application
+  [1m[36mUserlogin Load (2.3ms)[0m  [1m[34mSELECT "userlogins".* FROM "userlogins"[0m
+  Rendered userlogins/index.html.erb within layouts/application (33.2ms)
+Completed 200 OK in 7396ms (Views: 7378.9ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/userlogins/new" for 127.0.0.1 at 2017-09-19 10:28:14 +0700
+Processing by UserloginsController#new as HTML
+  Rendering userlogins/new.html.erb within layouts/application
+  Rendered userlogins/_form.html.erb (18.2ms)
+  Rendered userlogins/new.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 69ms (Views: 57.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/userlogins" for 127.0.0.1 at 2017-09-19 10:28:20 +0700
+Processing by UserloginsController#index as HTML
+  Rendering userlogins/index.html.erb within layouts/application
+  [1m[36mUserlogin Load (1.3ms)[0m  [1m[34mSELECT "userlogins".* FROM "userlogins"[0m
+  Rendered userlogins/index.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 93ms (Views: 85.0ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/userlogins/1/edit" for 127.0.0.1 at 2017-09-19 10:28:22 +0700
+Processing by UserloginsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUserlogin Load (0.4ms)[0m  [1m[34mSELECT  "userlogins".* FROM "userlogins" WHERE "userlogins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering userlogins/edit.html.erb within layouts/application
+  Rendered userlogins/_form.html.erb (4.0ms)
+  Rendered userlogins/edit.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 55ms (Views: 43.2ms | ActiveRecord: 2.4ms)
+
+
+Started PATCH "/userlogins/1" for 127.0.0.1 at 2017-09-19 10:28:26 +0700
+Processing by UserloginsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vTdB8Yu1B3QMBdKfkgbOD+OnZJ+0QLqg3+K3v0u9Ldl8kEFKWQ3IJF/6xws224ZLmiXcDXGvQ1RRtiPLqdNkEg==", "userlogin"=>{"userid"=>"1", "username"=>"khiem", "useremail"=>"khiem@gmail.com", "userpass"=>"123", "comment"=>"admin"}, "commit"=>"Update Userlogin", "id"=>"1"}
+  [1m[36mUserlogin Load (2.1ms)[0m  [1m[34mSELECT  "userlogins".* FROM "userlogins" WHERE "userlogins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "userlogins" SET "userid" = $1, "updated_at" = $2 WHERE "userlogins"."id" = $3[0m  [["userid", "1"], ["updated_at", "2017-09-19 03:28:26.630363"], ["id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/userlogins/1
+Completed 302 Found in 18ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/userlogins/1" for 127.0.0.1 at 2017-09-19 10:28:26 +0700
+Processing by UserloginsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUserlogin Load (0.2ms)[0m  [1m[34mSELECT  "userlogins".* FROM "userlogins" WHERE "userlogins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering userlogins/show.html.erb within layouts/application
+  Rendered userlogins/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 43ms (Views: 40.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/userlogins" for 127.0.0.1 at 2017-09-19 10:28:28 +0700
+Processing by UserloginsController#index as HTML
+  Rendering userlogins/index.html.erb within layouts/application
+  [1m[36mUserlogin Load (0.3ms)[0m  [1m[34mSELECT "userlogins".* FROM "userlogins"[0m
+  Rendered userlogins/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 43ms (Views: 41.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/userlogins/new" for 127.0.0.1 at 2017-09-19 10:28:30 +0700
+Processing by UserloginsController#new as HTML
+  Rendering userlogins/new.html.erb within layouts/application
+  Rendered userlogins/_form.html.erb (3.0ms)
+  Rendered userlogins/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 61ms (Views: 59.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/userlogins" for 127.0.0.1 at 2017-09-19 10:29:01 +0700
+Processing by UserloginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hh/wqajnQP55Kq7gRLKKhJ/n0MRZ5i8lJ0xwKflu2ZezUAkI+ifoH1xjpvk4eyX8mJzuvIVPX8MnW9lvThTTSg==", "userlogin"=>{"userid"=>"2", "username"=>"Nam", "useremail"=>"nam@gmail.com", "userpass"=>"345", "comment"=>"member"}, "commit"=>"Create Userlogin"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (35.4ms)[0m  [1m[32mINSERT INTO "userlogins" ("userid", "username", "useremail", "userpass", "comment", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userid", "2"], ["username", "Nam"], ["useremail", "nam@gmail.com"], ["userpass", "345"], ["comment", "member"], ["created_at", "2017-09-19 03:29:01.215470"], ["updated_at", "2017-09-19 03:29:01.215470"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/userlogins/2
+Completed 302 Found in 43ms (ActiveRecord: 36.3ms)
+
+
+Started GET "/userlogins/2" for 127.0.0.1 at 2017-09-19 10:29:01 +0700
+Processing by UserloginsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUserlogin Load (0.3ms)[0m  [1m[34mSELECT  "userlogins".* FROM "userlogins" WHERE "userlogins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering userlogins/show.html.erb within layouts/application
+  Rendered userlogins/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 60ms (Views: 50.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/userlogins" for 127.0.0.1 at 2017-09-19 10:29:03 +0700
+Processing by UserloginsController#index as HTML
+  Rendering userlogins/index.html.erb within layouts/application
+  [1m[36mUserlogin Load (0.4ms)[0m  [1m[34mSELECT "userlogins".* FROM "userlogins"[0m
+  Rendered userlogins/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 53ms (Views: 51.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/userlogins/new" for 127.0.0.1 at 2017-09-19 10:29:05 +0700
+Processing by UserloginsController#new as HTML
+  Rendering userlogins/new.html.erb within layouts/application
+  Rendered userlogins/_form.html.erb (8.3ms)
+  Rendered userlogins/new.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 79ms (Views: 77.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/userlogins" for 127.0.0.1 at 2017-09-19 10:29:32 +0700
+Processing by UserloginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AerMXMd7RVeDFhD3PBFu2qMgD0egzI/WjkK/GIq44/o0pTX9lbvttqZfGO5A2MGipFsxP3xl/zCOVRZePcLpJw==", "userlogin"=>{"userid"=>"3", "username"=>"Lan", "useremail"=>"lan@gmail.com", "userpass"=>"765", "comment"=>"member"}, "commit"=>"Create Userlogin"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "userlogins" ("userid", "username", "useremail", "userpass", "comment", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userid", "3"], ["username", "Lan"], ["useremail", "lan@gmail.com"], ["userpass", "765"], ["comment", "member"], ["created_at", "2017-09-19 03:29:32.443991"], ["updated_at", "2017-09-19 03:29:32.443991"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/userlogins/3
+Completed 302 Found in 13ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/userlogins/3" for 127.0.0.1 at 2017-09-19 10:29:32 +0700
+Processing by UserloginsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUserlogin Load (0.8ms)[0m  [1m[34mSELECT  "userlogins".* FROM "userlogins" WHERE "userlogins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering userlogins/show.html.erb within layouts/application
+  Rendered userlogins/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 70ms (Views: 65.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/userlogins" for 127.0.0.1 at 2017-09-19 10:29:34 +0700
+Processing by UserloginsController#index as HTML
+  Rendering userlogins/index.html.erb within layouts/application
+  [1m[36mUserlogin Load (0.3ms)[0m  [1m[34mSELECT "userlogins".* FROM "userlogins"[0m
+  Rendered userlogins/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 40ms (Views: 38.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/userlogins/new" for 127.0.0.1 at 2017-09-19 10:29:36 +0700
+Processing by UserloginsController#new as HTML
+  Rendering userlogins/new.html.erb within layouts/application
+  Rendered userlogins/_form.html.erb (5.1ms)
+  Rendered userlogins/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 45ms (Views: 43.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/userlogins" for 127.0.0.1 at 2017-09-19 10:30:05 +0700
+Processing by UserloginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cknS5aRE1CqVogQGBanHqf6ptkaFtvFoJM8A6N9mHCtHBitE9oR8y7DrDB95YGjR+dKIPlkfgY4k2KmuaBwW9g==", "userlogin"=>{"userid"=>"4", "username"=>"Phuong", "useremail"=>"phuong@gmail.com", "userpass"=>"3er4", "comment"=>"member"}, "commit"=>"Create Userlogin"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "userlogins" ("userid", "username", "useremail", "userpass", "comment", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userid", "4"], ["username", "Phuong"], ["useremail", "phuong@gmail.com"], ["userpass", "3er4"], ["comment", "member"], ["created_at", "2017-09-19 03:30:05.813312"], ["updated_at", "2017-09-19 03:30:05.813312"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/userlogins/4
+Completed 302 Found in 8ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/userlogins/4" for 127.0.0.1 at 2017-09-19 10:30:05 +0700
+Processing by UserloginsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUserlogin Load (0.3ms)[0m  [1m[34mSELECT  "userlogins".* FROM "userlogins" WHERE "userlogins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering userlogins/show.html.erb within layouts/application
+  Rendered userlogins/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 51ms (Views: 42.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/userlogins" for 127.0.0.1 at 2017-09-19 10:30:07 +0700
+Processing by UserloginsController#index as HTML
+  Rendering userlogins/index.html.erb within layouts/application
+  [1m[36mUserlogin Load (0.2ms)[0m  [1m[34mSELECT "userlogins".* FROM "userlogins"[0m
+  Rendered userlogins/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 40ms (Views: 38.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/userlogins/new" for 127.0.0.1 at 2017-09-19 10:30:09 +0700
+Processing by UserloginsController#new as HTML
+  Rendering userlogins/new.html.erb within layouts/application
+  Rendered userlogins/_form.html.erb (5.6ms)
+  Rendered userlogins/new.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 51ms (Views: 49.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/userlogins" for 127.0.0.1 at 2017-09-19 10:30:42 +0700
+Processing by UserloginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g4Sklf/M2F+AKmB5vD+fEsZUXnOH8oKZ1xfE23TyCuq2y100rQxwvqVjaGDA9jBqwS9gC1tb8n/XAG2dw4gANw==", "userlogin"=>{"userid"=>"5", "username"=>"Susan", "useremail"=>"susanus@gmail.com", "userpass"=>"1we3", "comment"=>"member"}, "commit"=>"Create Userlogin"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "userlogins" ("userid", "username", "useremail", "userpass", "comment", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["userid", "5"], ["username", "Susan"], ["useremail", "susanus@gmail.com"], ["userpass", "1we3"], ["comment", "member"], ["created_at", "2017-09-19 03:30:42.518598"], ["updated_at", "2017-09-19 03:30:42.518598"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/userlogins/5
+Completed 302 Found in 14ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/userlogins/5" for 127.0.0.1 at 2017-09-19 10:30:42 +0700
+Processing by UserloginsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUserlogin Load (0.3ms)[0m  [1m[34mSELECT  "userlogins".* FROM "userlogins" WHERE "userlogins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering userlogins/show.html.erb within layouts/application
+  Rendered userlogins/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 51ms (Views: 47.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/userlogins" for 127.0.0.1 at 2017-09-19 10:30:44 +0700
+Processing by UserloginsController#index as HTML
+  Rendering userlogins/index.html.erb within layouts/application
+  [1m[36mUserlogin Load (1.5ms)[0m  [1m[34mSELECT "userlogins".* FROM "userlogins"[0m
+  Rendered userlogins/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 54ms (Views: 51.1ms | ActiveRecord: 1.5ms)
+
+
