@@ -29,10 +29,10 @@ class UserloginsController < ApplicationController
     respond_to do |format|
       if @userlogin.save
         format.html { redirect_to @userlogin, notice: 'Userlogin was successfully created.' }
-        format.json { render :show, status: :created, location: @userlogin }
+        #format.json { render :show, status: :created, location: @userlogin }
       else
         format.html { render :new }
-        format.json { render json: @userlogin.errors, status: :unprocessable_entity }
+        #format.json { render json: @userlogin.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -43,10 +43,10 @@ class UserloginsController < ApplicationController
     respond_to do |format|
       if @userlogin.update(userlogin_params)
         format.html { redirect_to @userlogin, notice: 'Userlogin was successfully updated.' }
-        format.json { render :show, status: :ok, location: @userlogin }
+        #format.json { render :show, status: :ok, location: @userlogin }
       else
         format.html { render :edit }
-        format.json { render json: @userlogin.errors, status: :unprocessable_entity }
+        #format.json { render json: @userlogin.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -57,7 +57,7 @@ class UserloginsController < ApplicationController
     @userlogin.destroy
     respond_to do |format|
       format.html { redirect_to userlogins_url, notice: 'Userlogin was successfully destroyed.' }
-      format.json { head :no_content }
+      #format.json { head :no_content }
     end
   end
 
