@@ -1,0 +1,24 @@
+%p#notice= notice
+%h1{:align => "center", :style => "color:red"} USER SETTING
+%table{:align => "center", :border => "1px"}
+  %thead
+    %tr
+      %th{:style => "color:green"} ID
+      %th{:style => "color:green"} User Name
+      %th{:style => "color:green"} Email
+      %th{:style => "color:green"} Password
+      %th{:style => "color:green"} Comment
+      %th{:colspan => "3"}
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.userid
+        %td= user.username
+        %td= user.useremail
+        %td= user.userpass
+        %td= user.comment
+        %td= link_to 'Show', user
+        %td= link_to 'Edit', edit_user_path(user)
+        %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New User', new_user_path

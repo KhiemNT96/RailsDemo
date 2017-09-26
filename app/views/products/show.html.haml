@@ -1,0 +1,37 @@
+%p#notice= notice
+%p
+  %strong Productid:
+  = @product.ProductID
+%p
+  %strong Productname:
+  = @product.ProductName
+%p
+  %strong Productimage:
+  = @product.ProductImage
+%p
+  %strong Productstatus:
+  = @product.ProductStatus
+%p
+  %strong Roots:
+  = @product.Roots
+%p
+  %strong Description:
+  = @product.Description
+%p
+  %strong Rate:
+  = @product.Rate
+%p
+  %strong Digital:
+  = @product.Digital
+%p
+  %strong Customer question:
+  = @product.Customer_question
+%p
+  %strong Feedback:
+  = @product.Feedback
+%p
+  %strong Productcategoryid:
+  = @product.ProductCategoryID
+= link_to 'Edit', edit_product_path(@product)
+|
+= link_to 'Back', products_path

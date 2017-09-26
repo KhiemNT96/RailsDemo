@@ -1,0 +1,19 @@
+%p#notice= notice
+%p
+  %strong Userid:
+  = @user.userid
+%p
+  %strong Username:
+  = @user.username
+%p
+  %strong Useremail:
+  = @user.useremail
+%p
+  %strong Userpass:
+  = @user.userpass
+%p
+  %strong Comment:
+  = @user.comment
+= link_to 'Edit', edit_user_path(@user)
+|
+= link_to 'Back', users_path

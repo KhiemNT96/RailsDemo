@@ -55,3 +55,4 @@ gem 'nokogiri'
 gem 'autoprefixer-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'sinatra'
+gem "haml-rails", "~> 1.0"

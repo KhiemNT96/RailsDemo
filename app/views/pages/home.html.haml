@@ -1,0 +1,23 @@
+/ Main jumbotron for a primary marketing message or call to action
+.jumbotron
+  .container
+    %h1.display-3 Hello, Welcome to Ecommerce Website Demo!
+    %p Nothing is impossible! With me, With you!
+.container
+  / Example row of columns
+  .row
+    .col-md-4
+      %h2 PRODUCT
+      %p new - show - edit - destroy
+      %p
+        %a.btn.btn-secondary{:href => "http://localhost:3000/products", :role => "button"} View details »
+    .col-md-4
+      %h2 CATELORY
+      %p new - show - edit - destroy.
+      %p
+        %a.btn.btn-secondary{:href => "http://localhost:3000/productcategories", :role => "button"} View details »
+    .col-md-4
+      %h2 USER
+      %p new - show - edit - destroy.
+      %p
+        %a.btn.btn-secondary{:href => "http://localhost:3000/users", :role => "button"} View details »
